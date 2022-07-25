@@ -1,5 +1,7 @@
 apiVersion: v1
 kind: Namespace
-metadata: # kpt-merge: /example
-  name: backend
-spec: {}
+metadata: # kpt-merge: /some-app
+  name: some-app # kpt-set: ${some-app}
+  labels:
+  annotations:
+    ncp/static_snat_ip: 122.122.122.122 # kpt-set: ${gateway-snat-ip}
